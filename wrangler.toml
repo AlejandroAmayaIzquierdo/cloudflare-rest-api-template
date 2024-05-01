@@ -19,3 +19,6 @@ database_id = "bb4b65c0-4cb4-48a3-9a30-02f19a7c7df9"
 
 # [ai]
 # binding = "AI"
+
+[triggers]
+crons = ["0 0 * * *"]

@@ -4,6 +4,9 @@ declare namespace App {
     handler: import("hono").Hono<any, any, string>;
     authMiddleware?: (token: string, c: any) => Promise<boolean>;
   }
+  interface CronTask {
+    handle(db?: D1Database): Promise<void> | void;
+  }
 }
 
 declare namespace Api {
