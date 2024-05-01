@@ -15,7 +15,7 @@ compatibility_date = "2023-12-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "hono-resp-api-d1"
-database_id = "546af5c4-9e98-4059-bdec-fa76fc65692e"
+database_id = "bb4b65c0-4cb4-48a3-9a30-02f19a7c7df9"
 
 # [ai]
 # binding = "AI"
