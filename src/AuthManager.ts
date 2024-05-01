@@ -1,5 +1,6 @@
 import { lucia } from "lucia";
 import { d1 } from "@lucia-auth/adapter-sqlite";
+import { Context } from "hono";
 
 export const initializeLucia = (db: D1Database) => {
   const auth = lucia({
@@ -16,6 +17,20 @@ export const initializeLucia = (db: D1Database) => {
     },
   });
   return auth;
+};
+
+export const verifySession = async (
+  token: string,
+  c: Context<any, any, {}>
+) => {
+  try {
+    const auth = initializeLucia(c.env.DB);
+    const session: Lucia.Session = await auth.validateSession(token);
+    return session.sessionId === token;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
 };
 
 export type Auth = ReturnType<typeof initializeLucia>;

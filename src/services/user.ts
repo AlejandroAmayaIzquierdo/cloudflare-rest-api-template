@@ -52,3 +52,7 @@ export const getUser = async (
     throw { message: `${err}`, code: 401 };
   }
 };
+
+export const validatedSession = async (auth: Auth, token: string) => {
+  return (await auth.validateSession(token)) as Lucia.Session;
+};
