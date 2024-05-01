@@ -7,8 +7,6 @@ import {
 
 const user = new Hono<{ Bindings: Api.Bindings }>();
 
-user.get("/", (c) => c.text("Get users"));
-
 user.post("/login", async (c) => {
   try {
     const session = await loginController(c);
