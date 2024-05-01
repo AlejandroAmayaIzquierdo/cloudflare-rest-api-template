@@ -1,4 +1,10 @@
-declare namespace App {}
+declare namespace App {
+  interface Route {
+    path: string;
+    handler: import("hono").Hono<any, any, string>;
+    authMiddleware?: (token: string, c: any) => Promise<boolean>;
+  }
+}
 
 declare namespace Api {
   interface Response {
