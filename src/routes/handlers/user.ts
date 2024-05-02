@@ -3,7 +3,7 @@ import { StatusCode } from "hono/utils/http-status";
 import {
   loginController,
   signupController,
-} from "../controllers/userController";
+} from "../../controllers/userController";
 
 const user = new Hono<{ Bindings: Api.Bindings }>();
 

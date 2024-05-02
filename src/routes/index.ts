@@ -1,9 +1,9 @@
 import { Context } from "hono";
 import { verifySession } from "../AuthManager";
 
-import user from "./user";
-import storage from "./storage";
-import example from "./Example";
+import user from "./handlers/user";
+import storage from "./handlers/storage";
+import example from "./handlers/Example";
 
 const authMiddleware = async (token: string, c: Context) =>
   await verifySession(token, c);

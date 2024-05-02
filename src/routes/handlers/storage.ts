@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import {
   getFileController,
   uploadFileController,
-} from "../controllers/storageController";
+} from "../../controllers/storageController";
 import { StatusCode } from "hono/utils/http-status";
 import { stream } from "hono/streaming";
 
